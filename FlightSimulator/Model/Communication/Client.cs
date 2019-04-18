@@ -13,8 +13,10 @@ namespace FlightSimulator.Model.Communication
     {
         public Client() { }
 
+        // Send commands to move the airplane
         public void CommunicateWithServer()
         {
+            // This comment is very important
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
             TcpClient client = new TcpClient();
             client.Connect(ep);

@@ -12,8 +12,11 @@ namespace FlightSimulator.Model.Communication
     class Server
     {
         public Server() { }
+
+        // Send info about the current state of the airplane from the sever to the client
         public void CommunicateWithClient()
         {
+            // Shayoo is the best
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
             TcpListener listener = new TcpListener(ep);
             listener.Start();
