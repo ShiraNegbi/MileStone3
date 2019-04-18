@@ -137,6 +137,7 @@ namespace FlightSimulator.Views
             ///!!!!!!!!!!!!!!!!!
             /// YOU MUST CHANGE THE FUNCTION!!!!
             ///!!!!!!!!!!!!!!
+
             if (!Knob.IsMouseCaptured) return;
 
             Point newPos = e.GetPosition(Base);
@@ -160,6 +161,32 @@ namespace FlightSimulator.Views
             _prevAileron = Aileron;
             _prevElevator = Elevator;
 
+            //********************************** Dor's original code:
+
+            //if (!Knob.IsMouseCaptured) return;
+
+            //Point newPos = e.GetPosition(Base);
+
+            //Point deltaPos = new Point(newPos.X - _startPos.X, newPos.Y - _startPos.Y);
+
+            //double distance = Math.Round(Math.Sqrt(deltaPos.X * deltaPos.X + deltaPos.Y * deltaPos.Y));
+            //if (distance >= canvasWidth / 2 || distance >= canvasHeight / 2)
+            //    return;
+            //Aileron = -deltaPos.Y;
+            //Elevator = deltaPos.X;
+
+            //knobPosition.X = deltaPos.X;
+            //knobPosition.Y = deltaPos.Y;
+
+            //if (Moved == null ||
+            //    (!(Math.Abs(_prevAileron - Aileron) > AileronStep) && !(Math.Abs(_prevElevator - Elevator) > ElevatorStep)))
+            //    return;
+
+            //Moved?.Invoke(this, new VirtualJoystickEventArgs { Aileron = Aileron, Elevator = Elevator });
+            //_prevAileron = Aileron;
+            //_prevElevator = Elevator;
+
+            //****************************************************
         }
 
         private void Knob_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

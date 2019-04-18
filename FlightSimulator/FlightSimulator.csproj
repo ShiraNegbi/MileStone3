@@ -65,6 +65,9 @@
     </Compile>
     <Compile Include="Model\ApplicationSettingsModel.cs" />
     <Compile Include="Model\CommandHandler.cs" />
+    <Compile Include="Model\Communication\Client.cs" />
+    <Compile Include="Model\Communication\Server.cs" />
+    <Compile Include="Model\SymbolTable.cs" />
     <Compile Include="Model\EventArgs\VirtualJoystickEventArgs.cs" />
     <Compile Include="Model\Interface\ISettingsModel.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />
