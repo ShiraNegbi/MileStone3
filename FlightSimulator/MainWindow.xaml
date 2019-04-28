@@ -8,14 +8,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock TextAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="17" Foreground="Purple">
+            Flight Simulator
+        </TextBlock>
+        <TabControl Grid.Column="1" Grid.Row="1">
             <TabItem Header="Manual">
-                
                 <views:Joystick/>
             </TabItem>
             <TabItem Header="Auto Pilot">
-                <views:FlightBoard/>
             </TabItem>
         </TabControl>
+        <views:FlightBoard Grid.Row="1"/>
     </Grid>
 </Window>
