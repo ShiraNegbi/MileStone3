@@ -36,8 +36,8 @@ namespace FlightSimulator.Views
             planeLocations = new ObservableDataSource<Point>();
             // Set identity mapping of point in collection to point on plot
             planeLocations.SetXYMapping(p => p);
-
-            plotter.AddLineGraph(planeLocations, 2, "Route");
+            //THE NEXT LINE CAUSES AN ERROR
+            //plotter.AddLineGraph(planeLocations, 2, "Route");
         }
 
         private void Vm_PropertyChanged(object sender, PropertyChangedEventArgs e)
