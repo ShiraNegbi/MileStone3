@@ -22,6 +22,10 @@ namespace FlightSimulator
         public MainWindow()
         {
             InitializeComponent();
+            MessageBox.Show("Starting communication with client");
+            Model.Communication.Server server = new Model.Communication.Server();
+            server.CommunicateWithClient();
+            MessageBox.Show("I am after that line");
         }
     }
 }
