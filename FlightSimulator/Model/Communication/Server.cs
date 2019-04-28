@@ -10,16 +10,30 @@ using System.Threading.Tasks;
 
 namespace FlightSimulator.Model.Communication
 {
-    class Server
+    public class Server
     {
-        public Server()
+        //a singleton - a single instance of the server
+        private static Server singletonServer = null;
+        //a property for getting the server instance from the class
+        public static Server ModelServer 
+        {
+            get 
+            {
+                if(singletonServer == null)
+                {
+                   Server.singletonServer = new Server();
+                }
+                return singletonServer;
+            }
+        }
+        private Server()
         {
         }
         public delegate void ValuesUpdated(string[] values);
         public event ValuesUpdated ServerValuesUpdated;
 
         // Send info about the current state of the airplane from the sever to the client
-        public void CommunicateWithClient()
+        public void RecieveData()
         {
             // Shayoo is the best -  only after Shira <3
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
@@ -35,15 +49,10 @@ namespace FlightSimulator.Model.Communication
             {
                 StreamReader r = new StreamReader(stream);
 
-                //Console.WriteLine("Waiting for a number");
-                //int lon = reader.ReadInt32();
-                //Console.WriteLine("Number accepted");
-                //int lat = reader.ReadInt32();
-                //writer.Flush();
-
                 string data = r.ReadLine();
                 string[] values = data.Split(',');
                 ServerValuesUpdated?.Invoke(values);
+
             }
             client.Close();
             listener.Stop();
