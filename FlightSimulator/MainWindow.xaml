@@ -77,6 +77,19 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <views:FlightBoard Grid.Row="1"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <views:FlightBoard Grid.Row="1" Grid.ColumnSpan="3"/>
+            <Button Grid.Row="0" Content="Connect" VerticalAlignment="Center" HorizontalAlignment="Right"></Button>
+            <Button Grid.Row="0" Grid.Column="2" Content="Settings" VerticalAlignment="Center" HorizontalAlignment="Left"></Button>
+        </Grid>
     </Grid>
 </Window>
