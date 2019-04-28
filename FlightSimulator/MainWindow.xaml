@@ -10,6 +10,7 @@
     <Grid>
         <TabControl>
             <TabItem Header="Manual">
+                
                 <views:Joystick/>
             </TabItem>
             <TabItem Header="Auto Pilot">
