@@ -9,12 +9,26 @@ using System.Threading.Tasks;
 
 namespace FlightSimulator.Model.Communication
 {
-    class Client
+    public class Client
     {
-        public Client() { }
+        //a singleton - a single instance of the client
+        private static Client singletonClient = null;
+        //a property for getting the server instance from the class
+        public static Client ModelClient
+        {
+            get
+            {
+                if (singletonClient == null)
+                {
+                    Client.singletonClient = new Client();
+                }
+                return singletonClient;
+            }
+        }
+        private Client() { }
 
         // Send commands to move the airplane
-        public void CommunicateWithServer()
+        public void CommunicateWithServer(string setContent)
         {
             // This comment is very important
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
@@ -25,13 +39,10 @@ namespace FlightSimulator.Model.Communication
             using (BinaryReader reader = new BinaryReader(stream))
             using (BinaryWriter writer = new BinaryWriter(stream))
             {
-                // Send data to server
-                Console.Write("Please enter a number: ");
-                int num = int.Parse(Console.ReadLine());
-                writer.Write(num);
-                // Get result from server
-                int result = reader.ReadInt32();
-                Console.WriteLine("Result = {0}", result);
+              // Send data to server
+         //  Console.Write("Please enter a number: ");
+         //  int num = int.Parse(Console.ReadLine());
+                writer.Write(setContent);
             }
             client.Close();
         }
