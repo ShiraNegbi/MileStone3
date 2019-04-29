@@ -38,6 +38,6 @@
             Flight Command Port:
         </TextBlock>
         <Button Grid.Row="5" Content="OK" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,16.8,0,0" Grid.RowSpan="2"></Button>
-        <Button Grid.Row="5" Grid.Column="2" Content="Clear" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0.2,0,0,48.8" Grid.RowSpan="2" Click="Button_Click"></Button>
+        <Button Grid.Row="5" Grid.Column="2" Content="Clear" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0.2,0,0,48.8" Grid.RowSpan="2"></Button>
     </Grid>
 </Window>
