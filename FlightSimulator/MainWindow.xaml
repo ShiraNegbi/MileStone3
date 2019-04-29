@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightSimulator"
         xmlns:views="clr-namespace:FlightSimulator.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -23,18 +23,18 @@
             <TabItem Header="Manual">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="10*"/>
                         <ColumnDefinition Width="15*"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="10*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
                         <RowDefinition Height="15*"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="15*"/>
-                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
                     </Grid.RowDefinitions>
                     <views:Joystick Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <Slider Grid.Column="2" Grid.Row="3" Maximum="100" TickPlacement="BottomRight" TickFrequency="5"></Slider>
