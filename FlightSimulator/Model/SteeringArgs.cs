@@ -9,7 +9,7 @@ using FlightSimulator.Model.Communication;
 
 namespace FlightSimulator.Model
 {
-    public class Steering
+    public class SteeringArgs
     {
         //constant string values to send to server
         private const string AILERON_PATH_SET = "set controls/flight/aileron ";
