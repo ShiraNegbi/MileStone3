@@ -27,7 +27,8 @@ namespace FlightSimulator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Settings settings = new Settings();
+            settings.ShowDialog();
         }
     }
 }
