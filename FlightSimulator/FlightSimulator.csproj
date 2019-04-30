@@ -67,6 +67,7 @@
     <Compile Include="Model\CommandHandler.cs" />
     <Compile Include="Model\Communication\Client.cs" />
     <Compile Include="Model\Communication\Server.cs" />
+    <Compile Include="Model\Communication\ServerInfo.cs" />
     <Compile Include="Model\Interface\ICoordinatesModel.cs" />
     <Compile Include="Model\Interface\ISteeringModel.cs" />
     <Compile Include="Model\SymbolTable.cs" />

@@ -12,6 +12,12 @@ namespace FlightSimulator.Model.Communication
 {
     public class Server
     {
+
+        //holding the instance of the SINGLETON model in a member for readability
+        private ApplicationSettingsModel settingsModelInstance;
+
+        private ServerConnectivityInfo info;
+
         //a singleton - a single instance of the server
         private static Server singletonServer = null;
         //a property for getting the server instance from the class
@@ -36,7 +42,10 @@ namespace FlightSimulator.Model.Communication
         public void RecieveData()
         {
             // Shayoo is the best -  only after Shira <3
-            IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
+
+            string serverIP = settingsModelInstance.FlightServerIP;
+            int serverPort = settingsModelInstance.FlightCommandPort; //???? which is which
+            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(serverIP), serverPort);
             TcpListener listener = new TcpListener(ep);
             listener.Start();
             Console.WriteLine("Waiting for client connections...");
