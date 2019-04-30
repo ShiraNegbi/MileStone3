@@ -24,6 +24,8 @@
                 <views:Manual></views:Manual>
             </TabItem>
             <TabItem Header="Auto Pilot">
+                <views:AutoPilot></views:AutoPilot>
+                <!--
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="6*"/>
@@ -39,6 +41,7 @@
                     <Button Grid.Row="1" Content="OK" VerticalAlignment="Center" HorizontalAlignment="Right"></Button>
                     <Button Grid.Row="1" Grid.Column="2" Content="Clear" VerticalAlignment="Center" HorizontalAlignment="Left"></Button>
                 </Grid>
+                -->
             </TabItem>
         </TabControl>
         <Grid Grid.Row="1">
