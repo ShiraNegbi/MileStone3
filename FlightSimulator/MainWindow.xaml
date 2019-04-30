@@ -21,51 +21,7 @@
         </TextBlock>
         <TabControl Grid.Column="1" Grid.Row="1">
             <TabItem Header="Manual">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10*"/>
-                        <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="10*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="10*"/>
-                        <RowDefinition Height="15*"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="15*"/>
-                        <RowDefinition Height="10*"/>
-                    </Grid.RowDefinitions>
-                    <views:Joystick Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <Slider Grid.Column="2" Grid.Row="3" Maximum="100" TickPlacement="BottomRight" TickFrequency="5" Value="{Binding Path=Value, ElementName=slider}"></Slider>
-                    <Slider Grid.Column="1" Grid.Row="2" Maximum="100" TickPlacement="TopLeft" TickFrequency="5" Orientation="Vertical"></Slider>
-                    <TextBlock Grid.Column="2" Grid.Row="4" TextAlignment="Center" VerticalAlignment="Center" FontSize="13">
-                        ←rudder→
-                    </TextBlock>
-                    <TextBlock Grid.Column="2" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="13">
-                        ←aileron→
-                    </TextBlock>
-                    <TextBlock Grid.Column="3" HorizontalAlignment="Center">0.0</TextBlock>
-                    <TextBlock Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center">
-                        0.0
-                        <TextBlock.LayoutTransform>
-                            <RotateTransform Angle="90"></RotateTransform>
-                        </TextBlock.LayoutTransform></TextBlock>
-                    <TextBlock Grid.Column="0" Grid.Row="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="13" >
-                        ←throttle→
-                        <TextBlock.LayoutTransform>
-                            <RotateTransform Angle="90"></RotateTransform>
-                        </TextBlock.LayoutTransform>
-                    </TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">0</TextBlock>
-                    <TextBlock Grid.Column="4" Grid.Row="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="13" >
-                        ←elevator→
-                        <TextBlock.LayoutTransform>
-                            <RotateTransform Angle="90"></RotateTransform>
-                        </TextBlock.LayoutTransform>
-                    </TextBlock>
-                    <TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center">0</TextBlock>
-                </Grid>
+                <views:Manual></views:Manual>
             </TabItem>
             <TabItem Header="Auto Pilot">
                 <Grid>
