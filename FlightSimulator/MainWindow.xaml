@@ -45,18 +45,26 @@
                     <TextBlock Grid.Column="2" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="13">
                         ←aileron→
                     </TextBlock>
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Center">0.0</TextBlock>
+                    <TextBlock Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center">
+                        0.0
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="90"></RotateTransform>
+                        </TextBlock.LayoutTransform></TextBlock>
                     <TextBlock Grid.Column="0" Grid.Row="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="13" >
                         ←throttle→
                         <TextBlock.LayoutTransform>
                             <RotateTransform Angle="90"></RotateTransform>
                         </TextBlock.LayoutTransform>
                     </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">0</TextBlock>
                     <TextBlock Grid.Column="4" Grid.Row="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="13" >
                         ←elevator→
                         <TextBlock.LayoutTransform>
-                            <RotateTransform Angle="-90"></RotateTransform>
+                            <RotateTransform Angle="90"></RotateTransform>
                         </TextBlock.LayoutTransform>
                     </TextBlock>
+                    <TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center">0</TextBlock>
                 </Grid>
             </TabItem>
             <TabItem Header="Auto Pilot">
