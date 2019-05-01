@@ -1,4 +1,5 @@
 ﻿using FlightSimulator.Model;
+using FlightSimulator.Model.Communication;
 using FlightSimulator.Model.Interface;
 using FlightSimulator.Views;
 using System;
@@ -14,7 +15,46 @@ namespace FlightSimulator.ViewModels
 {
     public class FlightBoardViewModel : BaseNotify
     {
-        public double Lon { get; set; }
-        public double Lat { get; set; }
+
+        public FlightBoardViewModel()
+        {
+            SymbolTable.Instance.PropertyChanged += onDataUpdate;
+        }
+
+        public void onDataUpdate(string var)
+        {
+            if(var=="Lon")
+            {
+                Lon = SymbolTable.Instance.GetVal("Lon");
+            }
+            if (var == "Lat")
+            {
+                Lon = SymbolTable.Instance.GetVal("Lat");
+            }
+        }
+        private double lon;
+        private double lat;
+
+        public double Lon
+        {
+            get
+            {
+                return lon;
+            }
+            set
+            {
+                this.lon = value;
+                NotifyPropertyChanged("Lon");
+            }
+        }
+        public double Lat
+        {
+            get { return lat; }
+            set
+            {
+                this.lat = value;
+                NotifyPropertyChanged("Lat");
+            }
+        }
     }
 }

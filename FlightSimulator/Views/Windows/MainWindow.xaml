@@ -55,7 +55,7 @@
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
             <views:FlightBoard Grid.Row="1" Grid.ColumnSpan="3"/>
-            <Button Grid.Row="0" Content="Connect" VerticalAlignment="Center" HorizontalAlignment="Right"></Button>
+            <Button Grid.Row="0" Content="Connect" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0.2,12.4" Click="Connect_Click"></Button>
             <Button Grid.Row="0" Grid.Column="2" Content="Settings" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Button_Click"></Button>
         </Grid>
     </Grid>
