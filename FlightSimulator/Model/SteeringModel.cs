@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,8 @@ namespace FlightSimulator.Model
         private double elevator;
         private double rudder;
         private double throttle;
-        
-        
-    public double Aileron
+
+        public double Aileron
         {
             get { return aileron; }
             set
@@ -65,5 +65,6 @@ namespace FlightSimulator.Model
             }
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

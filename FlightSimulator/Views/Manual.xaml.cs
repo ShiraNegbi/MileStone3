@@ -25,8 +25,7 @@ namespace FlightSimulator.Views
         public Manual()
         {
             InitializeComponent();
-            DataContext = new ManualWindowViewModel(new SteeringModel());
-                
+            DataContext = new ManualWindowViewModel(new SteeringModel());     
         }
     }
 }
