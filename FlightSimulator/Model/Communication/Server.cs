@@ -18,10 +18,13 @@ namespace FlightSimulator.Model.Communication
 
         private ServerConnectivityInfo info;
 
+        private TcpClient client;
+        private TcpListener listener;
+
         //a singleton - a single instance of the server
         private static Server singletonServer = null;
         //a property for getting the server instance from the class
-        public static Server ModelServer 
+        public static Server Instance 
         {
             get 
             {
@@ -39,30 +42,37 @@ namespace FlightSimulator.Model.Communication
         public event ValuesUpdated ServerValuesUpdated;
 
         // Send info about the current state of the airplane from the sever to the client
-        public void RecieveData()
+        public void Connect()
         {
-            // Shayoo is the best -  only after Shira <3
-
             string serverIP = settingsModelInstance.FlightServerIP;
-            int serverPort = settingsModelInstance.FlightCommandPort; //???? which is which
+            int serverPort = settingsModelInstance.FlightInfoPort; //???? which is which
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse(serverIP), serverPort);
             TcpListener listener = new TcpListener(ep);
             listener.Start();
             Console.WriteLine("Waiting for client connections...");
-            TcpClient client = listener.AcceptTcpClient();
+            this.client = listener.AcceptTcpClient();
             Console.WriteLine("Client connected");
-
-            using (NetworkStream stream = client.GetStream())
-            using (BinaryReader reader = new BinaryReader(stream))
-            using (BinaryWriter writer = new BinaryWriter(stream))
+        }
+        public void StartReadingData()
+        {
+            while (!info.Stop)
             {
-                StreamReader r = new StreamReader(stream);
+                using (NetworkStream stream = client.GetStream())
+                {
+                    StreamReader r = new StreamReader(stream);
 
-                string data = r.ReadLine();
-                string[] values = data.Split(',');
-                ServerValuesUpdated?.Invoke(values);
+                    string data = r.ReadLine();
+                    string[] values = data.Split(',');
+                    ServerValuesUpdated?.Invoke(values);
 
+                }
+                client.Close();
+                listener.Stop();
             }
+        }
+
+        public void Disconnect()
+        {
             client.Close();
             listener.Stop();
         }

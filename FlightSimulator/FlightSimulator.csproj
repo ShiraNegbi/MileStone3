@@ -60,7 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\ApplicationSettingsModel.cs" />
@@ -73,11 +73,12 @@
     <Compile Include="Model\SymbolTable.cs" />
     <Compile Include="Model\EventArgs\VirtualJoystickEventArgs.cs" />
     <Compile Include="Model\Interface\ISettingsModel.cs" />
+    <Compile Include="Model\ValuesUpdater.cs" />
     <Compile Include="SettingsWindow.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />
     <Compile Include="ViewModels\FlightBoardViewModel.cs" />
     <Compile Include="ViewModels\Windows\SettingsWindowViewModel.cs" />
-    <Compile Include="ViewModels\Windows\SteeringWindowViewModel.cs" />
+    <Compile Include="ViewModels\Windows\ManualWindowViewModel.cs" />
     <Compile Include="Views\AutoPilot.xaml.cs">
       <DependentUpon>AutoPilot.xaml</DependentUpon>
     </Compile>
@@ -97,7 +98,7 @@
     <Compile Include="Views\Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

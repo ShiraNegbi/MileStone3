@@ -28,20 +28,19 @@ namespace FlightSimulator.Model.Communication
         private Client() { }
 
         // Send commands to move the airplane
-        public void CommunicateWithServer(string setContent)
+        public void SendCommandToServer(string setContent)
         {
             // This comment is very important
-            IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
+            string flightServerIp = ApplicationSettingsModel.Instance.FlightServerIP;
+            int flightCommandPort = ApplicationSettingsModel.Instance.FlightCommandPort;
+            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(flightServerIp) , flightCommandPort);
             TcpClient client = new TcpClient();
             client.Connect(ep);
             Console.WriteLine("You are connected");
             using (NetworkStream stream = client.GetStream())
-            using (BinaryReader reader = new BinaryReader(stream))
             using (BinaryWriter writer = new BinaryWriter(stream))
             {
               // Send data to server
-         //  Console.Write("Please enter a number: ");
-         //  int num = int.Parse(Console.ReadLine());
                 writer.Write(setContent);
             }
             client.Close();

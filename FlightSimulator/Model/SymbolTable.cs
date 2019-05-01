@@ -10,6 +10,9 @@ namespace FlightSimulator.Model.Communication
     class SymbolTable
     {
         private Dictionary<string, double> map { get; }
+        
+        //The propertyChanged event (an Action is a void function that gets a string as its input)
+        public event Action<string> PropertyChanged;
 
         // The symbol table can be created only once
         #region Singleton
@@ -27,14 +30,15 @@ namespace FlightSimulator.Model.Communication
         }
         #endregion
 
-        public void Add(string path, double val)
+        public void Add(string name, double val)
         {
-            map.Add(path, val);
+            map.Add(name, val);
+            this.PropertyChanged?.Invoke(name);
         }
 
-        public double GetVal(string path)
+        public double GetVal(string name)
         {
-            return map[path];
+            return map[name];
         }
     }
 }
