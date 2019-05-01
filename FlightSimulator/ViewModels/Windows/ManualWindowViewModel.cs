@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace FlightSimulator.ViewModels.Windows
 {
-    class SteeringWindowViewModel : BaseNotify
+    class ManualWindowViewModel : BaseNotify
     {
         private ISteeringModel model;
 
-        public SteeringWindowViewModel(ISteeringModel model)
+        public ManualWindowViewModel(ISteeringModel model)
         {
             this.model = model;
         }
@@ -22,7 +22,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Aileron = value;
-                NotifyPropertyChanged("Aileron");
+              //  NotifyPropertyChanged("Aileron");
             }
         }
 
@@ -32,7 +32,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Elevator = value;
-                NotifyPropertyChanged("Elevator");
+               // NotifyPropertyChanged("Elevator");
             }
         }
 
@@ -42,7 +42,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Rudder = value;
-                NotifyPropertyChanged("Rudder");
+               // NotifyPropertyChanged("Rudder");
             }
         }
         public double Throttle
@@ -51,7 +51,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Throttle = value;
-                NotifyPropertyChanged("Throttle");
+              //  NotifyPropertyChanged("Throttle");
             }
         }
 

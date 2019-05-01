@@ -14,7 +14,7 @@ namespace FlightSimulator.Model.Communication
         //a singleton - a single instance of the client
         private static Client singletonClient = null;
         //a property for getting the server instance from the class
-        public static Client ModelClient
+        public static Client Instance
         {
             get
             {
