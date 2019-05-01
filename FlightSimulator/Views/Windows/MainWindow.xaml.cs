@@ -29,7 +29,6 @@ namespace FlightSimulator
         {
             Settings settings = new Settings();
             settings.ShowDialog();
-
         }
     }
 }
