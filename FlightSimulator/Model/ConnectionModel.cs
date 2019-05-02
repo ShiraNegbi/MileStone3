@@ -29,6 +29,7 @@ namespace FlightSimulator.Model
                 Server.Instance.Disconnect();
             }
             Server.Instance.Connect();
+            #endregion
 
         }
         public void Disconnect()

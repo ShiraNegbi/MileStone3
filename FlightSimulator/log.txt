@@ -1,0 +1,322 @@
+commit 246c4fa93d0955a5be408ddc34aae174a0541fb2
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Thu May 2 18:11:24 2019 +0300
+
+    Added IsConnected property to Server.cs
+    Changed the name of the function Connect to DoConnect in IConnectionModel.
+    
+    Implemented ConnectionModel.
+
+commit be29a0882ca2a46c417b02e2b09e8b6d7371b15e
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Thu May 2 15:02:50 2019 +0300
+
+    Fixed the way the client works so it has Connect and Disconnect.
+    
+    Created a model for connections with the server and client.
+    
+    Edited SteeringModel so it checks if the client is supposed to be connected before telling it to send data.
+    
+    Created FlightButtons viewModel that controls the buttons of "Connect" and "Settings".
+    
+    Fixed FlightBoard.cs so it displays new points (hopefully it would work).
+    
+    General bug fixes.
+
+commit 8007f19077b9462f1ad5d2b81b44e09599e2bf62
+Merge: 37fdeee 4433207
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Wed May 1 23:23:00 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit 37fdeee6f5c9a213947a8e7aea0bd4739ea3c54b
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Wed May 1 23:22:51 2019 +0300
+
+    Added a member of the viewModel in the Flightboard cs file so it could add the new point.
+    
+    Connected the FlightBoard viewModel to the Model thorugh the symbolTable
+
+commit 443320786a741ecccc96d7c4e5956599425528e7
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Wed May 1 23:15:31 2019 +0300
+
+    Implement the binding between the values and the slider/joystick in the manual and their transmission to the model
+
+commit bceac47d1cb6f5ff5eac3e21dc5355cb25b605b0
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Wed May 1 21:09:43 2019 +0300
+
+    Fixed ISteeringModel to be an interface as it should be.
+    Changed Sthe name of SteeringWindowViewModel to ManualWindowViewModel
+
+commit e16ec76da50d03ab3aecc03d2742b532da2715e4
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Wed May 1 20:05:25 2019 +0300
+
+    Returned the SteeringWindowViewModel I accdientally deleted
+
+commit 49c3d111e3d20db9cbf2c4ca5050b2d1fe8f54eb
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Wed May 1 18:52:50 2019 +0300
+
+    Fixed the Client and Server classes. Also did the following:
+    In the Server class, Changed the RecieveData function in Server to 3 functions: Connect, StartReadingData, and Disconenct.
+    Removed Unnecessary functions in Client class.
+    In SymbolTable, Changed the name "path" to  "name"
+    Created a new class called ValuesUpdater that updates the values in the symbol table.
+    Moved MainWindow to Windows folder.
+
+commit e3af921ddef8b937959cee312445a57be63677e4
+Merge: b8d6331 d5c43f9
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Tue Apr 30 17:10:43 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit b8d6331ca6062ddd17b61f27736feafe45837230
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Tue Apr 30 17:02:32 2019 +0300
+
+    Updated the way the server works.
+    Created a class called ServerInfo which saves the details of whether the server is connected or whether it should stop or not
+
+commit d5c43f9bc53c83d6fff00bad9e8077c026c956e1
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Tue Apr 30 16:51:11 2019 +0300
+
+    Separate the AutoPilot to its own UserControl
+
+commit a30ac0dffdbf6a17258073705cad4cd3004f4855
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Tue Apr 30 16:47:45 2019 +0300
+
+    Separate the Manual from the MainWindow so it can be binded to a different DataContext
+
+commit 55d3f34bb8cffb3c5d54816729b5a16805fe7a85
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Tue Apr 30 16:22:58 2019 +0300
+
+    Adding the values of the joystick and the slliders
+
+commit 452334891bd3f067a4cdd362afd0ea32ddf9d435
+Merge: 871581a 4aeb041
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Tue Apr 30 15:11:45 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit 871581a7b030a4c56c116ad67e81771ea0e2e2ad
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Tue Apr 30 15:11:18 2019 +0300
+
+    Implement the settings button
+
+commit 4aeb04113eecddbba5e67f9f2d1538cf6331d937
+Merge: fc58927 45b78a4
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Mon Apr 29 23:44:11 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit 45b78a4468c8fe9b941a89d41419bfd7868575e8
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Mon Apr 29 23:41:10 2019 +0300
+
+    Settings fix
+
+commit fc58927f4e20ad90fbb37ab97b0c55147d64d9f6
+Merge: 9c224c9 4c3cd72
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Mon Apr 29 23:34:31 2019 +0300
+
+    merged projects
+
+commit 9c224c9dc7fd86c8b20d269e8e9a59be12d0bd0c
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Mon Apr 29 23:33:20 2019 +0300
+
+    Deleted wrong line
+
+commit 4c3cd7293ea4ac25db6e0e33608a1148d5fe0f4c
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Mon Apr 29 23:32:41 2019 +0300
+
+    Settings fix
+
+commit 7833a55f09658e990811cbfba8a1b352a0e6cfe5
+Merge: 72f2a12 0abea33
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Mon Apr 29 23:24:51 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit 72f2a12ed9be1f01453f79bc232a1742405ef0ea
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Mon Apr 29 23:24:45 2019 +0300
+
+    Enter
+
+commit 0abea33278c0a02743ffa86e531964ef6adc04ec
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Mon Apr 29 23:21:04 2019 +0300
+
+    Added interfaces of the model in the viewModels
+
+commit 987225790f22e3c6b8bc241493e50fddae20ef1a
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Mon Apr 29 23:10:39 2019 +0300
+
+    Implement the Settings view model
+
+commit 5a6ffd6ba41d5a642041770719f876c0418f218e
+Merge: 9c48806 2e527dc
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Mon Apr 29 19:02:41 2019 +0300
+
+    Merged two projects because of a file conflicts. Took the Remote .csproj file
+
+commit 9c48806446417097e83eba8fd92d33040cb48c19
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Mon Apr 29 18:58:44 2019 +0300
+
+    Created new ViewModel files. Created the binding in the Settings Window to the ViewModel and its Model
+
+commit 2e527dc4ea47baea2cd799bcc62a069be52f7774
+Merge: 57f9edc 3a49b2d
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Mon Apr 29 18:54:22 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit 57f9edccd608ee334c8ddecc8ae3e3b79a11f459
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Mon Apr 29 18:53:58 2019 +0300
+
+    Create the Settings window
+
+commit 3a49b2d0e5cd046e09cc8d711817faa591982196
+Merge: 997f743 901e807
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Sun Apr 28 23:47:20 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit 997f743bfefe9891154ba18fc0fb336570d63290
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Sun Apr 28 23:47:04 2019 +0300
+
+    Created ViewModel files
+
+commit 901e80703b1db7be9d4ea5c62e1cd684aba15c5c
+Merge: 583174d c6ef281
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 22:42:56 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit 583174dad219804e55a795920725e8e105106526
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 22:42:19 2019 +0300
+
+    Add the content of the AutoPilot window
+
+commit c6ef2818a5fba36e207c0d5eb19e58a48fc0251e
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Sun Apr 28 22:27:17 2019 +0300
+
+    Made The server and client singleton.
+    Added classes with properties of get and set in the server that are used to communicate with the ViewModel
+
+commit 20b4731fd815eaae39666b6bee85cefbd2c70d96
+Merge: 8f90b55 f71fe9f
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Sun Apr 28 22:15:33 2019 +0300
+
+    Merge branch 'master' of https://github.com/ShiraNegbi/MileStone3
+
+commit f71fe9fdee323575bdd910af145c09ae1d23da32
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 22:14:16 2019 +0300
+
+    Build the Joystick tab content
+
+commit 457a642a39f6358122ffee94dab96d34386def3b
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 20:51:39 2019 +0300
+
+    Add and locate the buttons
+
+commit f8214e094f7239b177ddc1068f1792ac27c68236
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 20:31:00 2019 +0300
+
+    Split the main window into two columns with the content
+
+commit 8f90b55869367faaab1d0c5336ef432533bc9f6f
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Sun Apr 28 19:03:31 2019 +0300
+
+    Rremoved unnecessary comment
+
+commit b2ab20087e8f3b41f8c4290dbb32056a481fb325
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 19:02:33 2019 +0300
+
+    Remove lines from mainWindow
+
+commit 070a9555572bd59e447f8d3a75bf7728a924485f
+Merge: ca9aa17 f29e6f0
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 18:35:03 2019 +0300
+
+    Comment
+
+commit ca9aa17666e658d3896b095d39d35e034edcf936
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Sun Apr 28 18:30:55 2019 +0300
+
+    Comment
+
+commit f29e6f088e84b2f39a2e2a500a13957cd3d4ecf7
+Author: shay slonim <shayslonim@gmail.com>
+Date:   Sun Apr 28 18:29:10 2019 +0300
+
+    Updated reading from the server, and added the event after the reading.
+
+commit 762433d99de281b5f9d1ef6bf1c18b19a915d535
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Thu Apr 18 15:55:03 2019 +0300
+
+    Divide the MainFlowWindow into the tabs of Manual and Auto Pilot and add their content
+
+commit 093c5bf5066b30bd214340313d3e509f81950c1b
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Thu Apr 18 13:53:31 2019 +0300
+
+    Add some important documentation so the code can be better understood
+
+commit 760573846a56c516c420df55cb0ce01bea419f1e
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Thu Apr 18 13:48:48 2019 +0300
+
+    Implement the Server and Client classes according to the presentation of recitation 3
+
+commit d0d05ace20da2fc10d09f67904a1790b766314ea
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Thu Apr 18 13:17:49 2019 +0300
+
+    Implement the SymbolTable class and create the Client and the Server classes
+
+commit f09eec48d5f399f7a90ec498c6c2f5f1fe8fd242
+Author: Shira Negbi <shira.negbi@live.biu.ac.il>
+Date:   Wed Apr 17 23:18:12 2019 +0300
+
+    Upload files
+
+commit 083c2c64a724198eae52f6d851353a61a1b9f524
+Author: ShiraNegbi <45918624+ShiraNegbi@users.noreply.github.com>
+Date:   Wed Apr 17 23:10:32 2019 +0300
+
+    Initial commit
