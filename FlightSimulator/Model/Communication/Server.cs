@@ -21,6 +21,8 @@ namespace FlightSimulator.Model.Communication
         private TcpClient client;
         private TcpListener listener;
 
+        public bool IsConnect { get; set; }
+
         //a singleton - a single instance of the server
         private static Server singletonServer = null;
         //a property for getting the server instance from the class
@@ -44,8 +46,9 @@ namespace FlightSimulator.Model.Communication
         // Send info about the current state of the airplane from the sever to the client
         public void Connect()
         {
+            this.IsConnect = true;
             string serverIP = settingsModelInstance.FlightServerIP;
-            int serverPort = settingsModelInstance.FlightInfoPort; //???? which is which
+            int serverPort = settingsModelInstance.FlightInfoPort; //todo: which is which
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse(serverIP), serverPort);
             TcpListener listener = new TcpListener(ep);
             listener.Start();
@@ -55,6 +58,10 @@ namespace FlightSimulator.Model.Communication
         }
         public void StartReadingData()
         {
+            if(IsConnect==false)
+            {
+                throw new Exception("StartReadingData was called even though IsConnect is false. Are you sure this is what you wanted?");
+            }
             while (!info.Stop)
             {
                 using (NetworkStream stream = client.GetStream())
@@ -73,6 +80,7 @@ namespace FlightSimulator.Model.Communication
 
         public void Disconnect()
         {
+            this.IsConnect = false;
             client.Close();
             listener.Stop();
         }

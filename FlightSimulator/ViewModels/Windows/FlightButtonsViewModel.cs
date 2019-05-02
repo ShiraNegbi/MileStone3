@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 namespace FlightSimulator.ViewModels.Windows
 {
     class FlightButtonsViewModel
@@ -27,7 +27,7 @@ namespace FlightSimulator.ViewModels.Windows
         }
         private void OnClick()
         {
-            model.SaveSettings();
+            model.DoConnection();
         }
         #endregion
     }

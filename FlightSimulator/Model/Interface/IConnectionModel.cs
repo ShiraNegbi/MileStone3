@@ -8,7 +8,7 @@ namespace FlightSimulator.Model
 {
     public interface IConnectionModel
     {
-        void Connect();
+        void DoConnection();
         void Disconnect();
     }
 }

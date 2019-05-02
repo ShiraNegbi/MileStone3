@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ConnectionModel.cs" />
     <Compile Include="Model\Interface\IConnectionModel.cs" />
     <Compile Include="Model\SteeringModel.cs" />
     <Compile Include="ViewModels\Windows\FlightButtonsViewModel.cs" />
