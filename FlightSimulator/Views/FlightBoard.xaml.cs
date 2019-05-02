@@ -32,7 +32,7 @@ namespace FlightSimulator.Views
             InitializeComponent();
             viewModel = new FlightBoardViewModel();
             DataContext = viewModel;
-            viewModel.PropertyChanged += Vm_PropertyChanged;
+            viewModel.PropertyChanged +=Vm_PropertyChanged;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -48,8 +48,8 @@ namespace FlightSimulator.Views
         {
             if(e.PropertyName.Equals("Lat") || e.PropertyName.Equals("Lon"))
             {
-                Point p1 = new Point()           
-                planeLocations.AppendAsync(Dispatcher, p1);
+                Point newPoint = new Point(viewModel.Lat, viewModel.Lon);           
+                planeLocations.AppendAsync(Dispatcher, newPoint);
             }
         }
 

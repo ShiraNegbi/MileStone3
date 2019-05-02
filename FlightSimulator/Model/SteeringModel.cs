@@ -31,7 +31,7 @@ namespace FlightSimulator.Model
             {
                 this.aileron = value;
                 string sendValueMsg = AILERON_PATH_SET + value + "\r\n";
-                Client.Instance.SendCommandToServer(sendValueMsg);
+                this.SendCommandToServer(sendValueMsg);
             }
         }
         public double Elevator
@@ -41,7 +41,7 @@ namespace FlightSimulator.Model
             {
                 this.elevator = value;
                 string sendValueMsg = ELEVATOR_PATH_SET + value + "\r\n";
-                Client.Instance.SendCommandToServer(sendValueMsg);
+                this.SendCommandToServer(sendValueMsg);
             }
         }
         public double Rudder
@@ -51,7 +51,7 @@ namespace FlightSimulator.Model
             {
                 this.rudder = value;
                 string sendValueMsg = RUDDER_PATH_SET + value + "\r\n";
-                Client.Instance.SendCommandToServer(sendValueMsg);
+                this.SendCommandToServer(sendValueMsg);
             }
         }
         public double Throttle
@@ -61,10 +61,17 @@ namespace FlightSimulator.Model
             {
                 this.throttle = value;
                 string sendValueMsg = THROTTLE_PATH_Set + value + "\r\n";
-                Client.Instance.SendCommandToServer(sendValueMsg);
+                
+                this.SendCommandToServer(sendValueMsg);
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        private void SendCommandToServer(string content)
+        {
+            if(Client.Instance.IsConnect)
+            {
+                Client.Instance.SendCommandToServer(content);
+            }
+        }
     }
 }

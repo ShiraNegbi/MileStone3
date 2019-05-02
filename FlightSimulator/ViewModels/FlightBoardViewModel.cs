@@ -26,10 +26,12 @@ namespace FlightSimulator.ViewModels
             if(var=="Lon")
             {
                 Lon = SymbolTable.Instance.GetVal("Lon");
+                NotifyPropertyChanged("Lon");
             }
             if (var == "Lat")
             {
                 Lon = SymbolTable.Instance.GetVal("Lat");
+                NotifyPropertyChanged("Lat");
             }
         }
         private double lon;

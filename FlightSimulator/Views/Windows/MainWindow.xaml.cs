@@ -1,4 +1,5 @@
-﻿using FlightSimulator.Views;
+﻿using FlightSimulator.ViewModels;
+using FlightSimulator.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace FlightSimulator
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new FlightBoardViewModel();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

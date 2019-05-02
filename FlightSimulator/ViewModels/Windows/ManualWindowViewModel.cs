@@ -14,22 +14,6 @@ namespace FlightSimulator.ViewModels.Windows
         public ManualWindowViewModel(ISteeringModel model)
         {
             this.model = model;
-            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
-            {
-                if (e.PropertyName == "ThrottleSlider")
-                {
-                    Throttle = model.Throttle;
-                }
-                else if (e.PropertyName == "RudderSlider")
-                {
-                    Rudder = model.Rudder;
-                }
-                else if (e.PropertyName == "JoyStick")
-                {
-                    Aileron = model.Aileron;
-                    Elevator = model.Elevator;
-                }
-            };
         }
 
         public double Aileron
@@ -38,7 +22,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Aileron = value;
-                NotifyPropertyChanged("Aileron");
+                //NotifyPropertyChanged("Aileron");
             }
         }
 
@@ -48,7 +32,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Elevator = value;
-                NotifyPropertyChanged("Elevator");
+                //NotifyPropertyChanged("Elevator");
             }
         }
 
@@ -58,7 +42,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Rudder = value;
-                NotifyPropertyChanged("Rudder");
+                //NotifyPropertyChanged("Rudder");
             }
         }
         public double Throttle
@@ -67,7 +51,7 @@ namespace FlightSimulator.ViewModels.Windows
             set
             {
                 model.Throttle = value;
-                NotifyPropertyChanged("Throttle");
+               //NotifyPropertyChanged("Throttle");
             }
         }
 
